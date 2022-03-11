@@ -20,7 +20,7 @@ def main(cls):
 
     vec = CountVectorizer()
     trf = TfidfTransformer()
-
+    # CountVectorizer.fit_transform(x) 输入文档 x ，输出文档中各单词的词频 TF
     tf_idf = trf.fit_transform(vec.fit_transform(sql_text))
     # word = vec.get_feature_names_out()
     # word_list = vec.get_feature_names()
