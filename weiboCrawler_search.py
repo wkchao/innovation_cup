@@ -93,5 +93,5 @@ def main(_word, num):
 
 if __name__ == '__main__':
     word = input(":")
-    main(word, 100)
+    main(word, 10)
 

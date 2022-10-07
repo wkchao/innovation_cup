@@ -1,7 +1,8 @@
 import db
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
-
+import pyLDAvis
+import pyLDAvis.sklearn
 
 def print_top_words(model, feature_names, n_top_words):
     for topic_idx, topic in enumerate(model.components_):
@@ -48,6 +49,9 @@ def main(cls):
     n_top_words = 20
     tf_feature_names = vec.get_feature_names_out()
     print_top_words(lda, tf_feature_names, n_top_words)
+    # 可视化
+    pic = pyLDAvis.sklearn.prepare(lda, tf, vec)
+    pyLDAvis.save_html(pic, 'lda_pass'+str(cls)+'.html')
 
 
 if __name__ == '__main__':

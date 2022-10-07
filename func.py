@@ -9,7 +9,6 @@ def seg_depart(_text):
     sentence_depart = jieba.posseg.cut(_text.strip(), use_paddle=True)
     text = ''
     for word, flag in sentence_depart:
-
         if word not in stopwords:
             if word != '\t' and flag in ['n', 's', 'ns', 'nt', 'nw', 'nz', 'PER', 'LOC', 'ORG']:
                 text = text + word + ' '

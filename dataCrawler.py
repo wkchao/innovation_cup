@@ -144,8 +144,8 @@ def peoplesDaily(startDate, endDate, dir):
 
 
 if __name__ == '__main__':
-    a = '20210101'
-    b = '20210105'
+    a = '20220101'
+    b = '20220105'
     peoplesDaily(a, b, '.')
 
 
